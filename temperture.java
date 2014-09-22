@@ -71,6 +71,15 @@ public class temperture {
 		-1:		means the first temp is lower that the second
 	*/
 
+	// instance method
+	public int compareOne(temperture A){
+		System.out.println(this.value);
+		System.out.println(A.value);
+
+	return 0;	
+	}
+
+		// class method
 	public static int compare(temperture A, temperture B) {
 		// the key word static means this is a class method not a instance 
 		if (A.getScale() == 'C' && B.getScale() == 'C') {
@@ -81,9 +90,48 @@ public class temperture {
 			else if (A.getValue() > B.getValue()) {
 				System.out.println("1 - first temp is higher then second");
 			}
-			
+			else if (A.getValue() < B.getValue()) {
+				System.out.println("-1 - first temp is lower then second");
+			}
 		}
+		if (A.getScale() == 'F' && B.getScale() == 'F') {
+			System.out.println("They are both F.");
+			if (A.getValue() == B.getValue()) {
+				System.out.println("0 - two temps are equal");
+			}
+			else if (A.getValue() > B.getValue()) {
+				System.out.println("1 - first temp is higher then second");
+			}
+			else if (A.getValue() < B.getValue()) {
+				System.out.println("-1 - first temp is lower then second");
+			}
+		}
+		if (A.getScale() == 'C' && B.getScale() == 'F') {
+			System.out.println("The first is C and second is F.");
+			if (A.getValue() == B.getValue()) {
+				System.out.println("0 - two temps are equal");
+			}
+			else if (A.getValue() > B.getTempC()) {
+				System.out.println("1 - first temp is higher then second");
+			}
+			else if (A.getValue() < B.getTempC()) {
+				System.out.println("-1 - first temp is lower then second");
+			}
+		}
+		if (A.getScale() == 'F' && B.getScale() == 'C') {
+			System.out.println("The first is F and second is C.");
+			if (A.getValue() == B.getValue()) {
+				System.out.println("0 - two temps are equal");
+			}
+			else if (A.getValue() > B.getTempF()) {
+				System.out.println("1 - first temp is higher then second");
+			}
+			else if (A.getValue() < B.getTempF()) {
+				System.out.println("-1 - first temp is lower then second");
+			}
+		}
+		return 0;
 	}	
 
-	void Convertf(temperture t){}
+	// void Convertf(temperture t){}
 }
